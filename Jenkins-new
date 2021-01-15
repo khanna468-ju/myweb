@@ -1,0 +1,13 @@
+pipeline{
+    agent any
+       stages{
+           stage('Maven compile'){
+               withMaven(maven: 'apache-maven')
+               sh "mvn clean compile"
+           }
+           stage('Maven build') {
+             withMaven(maven: 'apache-maven')
+              sh " mvn clean build "
+            }  
+       }
+}
