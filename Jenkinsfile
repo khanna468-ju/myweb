@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-     PATH=/usr/local/apache-maven/apache-maven-3.6.3/bin:$PATH
+     PATH= "/usr/local/apache-maven/apache-maven-3.6.3/bin:$PATH"
   }
     stages {
       stage('git checkout') {
@@ -9,7 +9,7 @@ pipeline {
         git credentialsId: 'gitaccess', url: 'https://github.com/khanna468-ju/myweb.git'
        }
     }
-      stage('buildt') {
+      stage('build') {
        steps {
         sh " mvn clean install "
        }
