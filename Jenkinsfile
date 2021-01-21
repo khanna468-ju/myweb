@@ -1,5 +1,7 @@
 pipeline {
   agent any
+  environment {
+     PATH=/usr/local/apache-maven/apache-maven-3.6.3/bin:$PATH
     stages {
       stage('git checkout') {
        steps {
