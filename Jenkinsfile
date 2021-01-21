@@ -6,5 +6,10 @@ pipeline {
         git credentialsId: 'gitaccess', url: 'https://github.com/khanna468-ju/myweb.git'
        }
     }
+      stage('buildt') {
+       steps {
+        sh " mvn clean install "
+       }
+    }
   }
 }
